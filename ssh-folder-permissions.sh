@@ -3,6 +3,8 @@ echo "-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-"
 echo "      chmod permissions on default ssh files"
 echo "-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-'-"
 
+cd ~
+
 sudo chmod 700 ~/.ssh
 
 sudo chmod 644 ~/.ssh/id_rsa.pub

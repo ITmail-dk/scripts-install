@@ -18,5 +18,7 @@ sudo apt install -y nvidia-driver-libs:i386
 
 sudo apt install -y ./steam.deb
 
+cd ~
+
 clear
 echo " # # # # # RUN STEAM CORMAND: steam"

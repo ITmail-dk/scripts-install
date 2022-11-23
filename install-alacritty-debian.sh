@@ -72,6 +72,6 @@ sudo update-desktop-database
 # Not for production version
 #read -p "Troubleshooting - Press a key to continue the installation."
 
-cd ~/bspwm-install-ma-dte
+cd ~
 clear
 echo "Alacritty Install - ALL DONE"

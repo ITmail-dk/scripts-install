@@ -16,7 +16,7 @@ cd /tmp/
 wget -O vscode_amd64.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
 sudo apt install -y /tmp/vscode_amd64.deb
 
-cd ~/bspwm-install-ma-dte
+cd ~
 
 clear
 
