@@ -12,4 +12,4 @@ Open a terminal and go to the scripts-install folder and run...
 
 `cd scripts-install`
 
-`./install-vscode-debian.sh`
+`. install-vscode-debian.sh`
