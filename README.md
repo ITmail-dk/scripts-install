@@ -1,8 +1,8 @@
 # Install Scripts for Linux
-Small and quick install scripts for all kinds of things, mostly for Debian in Linux
+Small and quick install scripts for all kinds of things, mostly for Debian Linux.
 
 
-# Run this Command line in the terminal, to get the install scripts.
+## Run this Command line in the terminal, to get the install scripts.
 
 `sudo apt install -y git && cd ~ && git clone https://github.com/ITmail-dk/scripts-install`
 
@@ -10,6 +10,6 @@ Small and quick install scripts for all kinds of things, mostly for Debian in Li
 ## Sample code of an VS Code installation to get you started.
 Open a terminal and go to the scripts-install folder and run...
 
-cd scripts-install
+`cd scripts-install`
 
-./install-vscode-debian.sh
+`./install-vscode-debian.sh`
