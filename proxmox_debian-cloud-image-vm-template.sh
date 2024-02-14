@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+#crontab -e
+#0 1 * * 6 /root/Create_Debian-Cloud-VM.sh
+
 #Proxmox - Debian-Cloud-Image VM Template
 URLIMG="https://cloud.debian.org/images/cloud/bookworm/latest"
 IMGFILENAME="debian-12-generic-amd64.qcow2"
