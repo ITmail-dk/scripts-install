@@ -8,9 +8,9 @@ FILENAME="$(curl -s "$FULLURL" | grep x86_64.qcow2 | sed -n 's/.*href="\([^"]*\)
 SSHPUBKEY=/root/ssh-public-key.pub
 VMID="9001"
 VMNAME="Fedora-Cloud-Image"
-VMUSER="mara"
-VMPASSWORD="Sdrk4@fsa22"
-VMSTORAGE="ceph-rbd"
+VMUSER="username"
+VMPASSWORD="Pass24"
+VMSTORAGE="local-lvm"
 TAGS="Template"
 
 echo "Start of NEW VM $VMNAME"
