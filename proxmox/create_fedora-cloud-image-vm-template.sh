@@ -9,7 +9,7 @@ SSHPUBKEY=/root/ssh-public-key.pub
 VMID="9001"
 VMNAME="Fedora-Cloud-Image"
 VMUSER="username"
-VMPASSWORD="Pass24"
+VMPASSWORD="Code24"
 VMSTORAGE="local-lvm"
 TAGS="Template"
 
