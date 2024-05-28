@@ -28,7 +28,7 @@ CUSTOM_KEYS = {
     "Backspace": 2,
     "Tab": 1.5,
     "\\": 1.5,
-    "Return": 2.45,
+    "Return": 2.45,33
     "shift": 2,
     "space": 5,
 }
@@ -200,6 +200,7 @@ class KeyboardPNGFactory:
         surface.write_to_png(filename)
 
     def draw_button(self, context, key, x, y, width, height):
+        radius = 3  # Radius for the rounded corners
         fn = False
         if key[:4] == "XF86":
             fn = True
@@ -215,23 +216,23 @@ class KeyboardPNGFactory:
                 self.rgb_yellow(context)
             else:
                 self.rgb_violet(context)
-            context.rectangle(x, y, width, height)
+            self.rounded_rectangle(context, x, y, width, height, radius)
             context.fill()
 
         if key in self.modifiers:
-            context.rectangle(x, y, width, height)
+            self.rounded_rectangle(context, x, y, width, height, radius)
             self.rgb_red(context)
             context.fill()
 
         if key in self.keys:
             k = self.keys[key]
-            context.rectangle(x, y, width, height)
+            self.rounded_rectangle(context, x, y, width, height, radius)
             self.set_key_color(context, k)
             context.fill()
 
             self.show_multiline(context, x + COMMAND_X, y + COMMAND_Y, k)
 
-        context.rectangle(x, y, width, height)
+        self.rounded_rectangle(context, x, y, width, height, radius)
         context.set_source_rgb(0, 0, 0)
         context.stroke()
 
@@ -243,6 +244,14 @@ class KeyboardPNGFactory:
 
         context.move_to(x + BUTTON_NAME_X, y + BUTTON_NAME_Y)
         context.show_text(self.translate(key))
+
+    def rounded_rectangle(self, context, x, y, width, height, radius):
+        context.new_path()
+        context.arc(x + radius, y + radius, radius, 2 * (3.14 / 2), 3 * (3.14 / 2))
+        context.arc(x + width - radius, y + radius, radius, 3 * (3.14 / 2), 4 * (3.14 / 2))
+        context.arc(x + width - radius, y + height - radius, radius, 0, 3.14 / 2)
+        context.arc(x + radius, y + height - radius, radius, 3.14 / 2, 2 * (3.14 / 2))
+        context.close_path()
 
     def show_multiline(self, context, x, y, key):
         """Cairo doesn't support multiline. Added with word wrapping."""
