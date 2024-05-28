@@ -28,11 +28,10 @@ CUSTOM_KEYS = {
     "Backspace": 2,
     "Tab": 1.5,
     "\\": 1.5,
-    "Return": 2.45,33
+    "Return": 2.4533,
     "shift": 2,
     "space": 5,
 }
-
 
 class Button:
     def __init__(self, key, x, y, width, height):
@@ -165,7 +164,7 @@ class KeyboardPNGFactory:
 
         context.move_to(40, 50)
         context.set_font_size(34)
-        context.show_text("Keybindings for Qtile")
+        context.show_text("Qmade - Keybindings for Qtile")
 
         context.move_to(40, 80)
         context.set_font_size(22)
@@ -190,17 +189,17 @@ class KeyboardPNGFactory:
                 x += Pos.GAP + Pos.WIDTH
 
         # draw mouse base
-        context.rectangle(830, 660, 244, 90)
+        context.rectangle(830, 670, 244, 90)
         context.set_source_rgb(0, 0, 0)
         context.stroke()
         context.set_font_size(28)
-        context.move_to(900, 720)
+        context.move_to(900, 730)
         context.show_text("MOUSE")
 
         surface.write_to_png(filename)
 
     def draw_button(self, context, key, x, y, width, height):
-        radius = 3  # Radius for the rounded corners
+        radius = 5  # Radius for the rounded corners
         fn = False
         if key[:4] == "XF86":
             fn = True
@@ -393,11 +392,10 @@ optional arguments:
                         set directory to export all images to
 """
 if __name__ == "__main__":
-    config_path = None
+    config_path = os.path.expanduser("~/.config/qtile/config.py")  # Set default config path
     output_dir = ""
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hc:o:", ["help=", "config=", "output-dir="])
-
     except getopt.GetoptError:
         print(help_doc)
         sys.exit(2)
